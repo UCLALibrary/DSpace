@@ -46,7 +46,7 @@
          <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
          <repeatable>false</repeatable>
-         <label>Project Title*</label>
+         <label>*Project Title</label>
          <input-type>onebox</input-type>
          <hint>dc.title (required): This field is for the main title of your project (e.g., Digital Karnak or Virtual Turin). Please use appropriate title casing.</hint>
          <required>You must enter a valid title for the project.</required>
@@ -170,11 +170,11 @@
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
-         <dc-qualifier></dc-qualifier>
+         <dc-qualifier>other</dc-qualifier>
          <repeatable>true</repeatable>
          <label>Contributor(s)</label>
          <input-type>name</input-type>
-         <hint>dc.contributor: Please enter the names of other key contributors to this project.</hint>
+         <hint>dc.contributor.other: Please enter the names of other key contributors to this project.</hint>
          <required></required>
        </field>
        <field>
@@ -260,7 +260,7 @@
          <dc-element>date</dc-element>
          <dc-qualifier>issued</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Date of Issue*</label>
+         <label>*Date of Issue</label>
          <input-type>date</input-type>
          <hint>dc.date.issued (required): Please give the date of previous publication or public distribution of the project. You can leave out the day and/or month if they aren't applicable.</hint>
          <required>You must at least specify the year.</required>
