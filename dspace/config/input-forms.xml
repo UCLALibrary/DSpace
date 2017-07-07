@@ -165,7 +165,7 @@
          <repeatable>true</repeatable>
          <label>Temporal Scope</label>
          <input-type value-pairs-name="historical_periods">dropdown</input-type>
-         <hint>Please describe the project's primary time period(s).</hint>
+         <hint>Please select the project's primary time period(s).</hint>
          <!-- dc.coverage.temporal -->
          <required></required>
        </field>
@@ -492,16 +492,6 @@ it, please enter the types and the actual numbers or codes.</hint>
        </field>
        -->
 
-        <field>
-         <dc-schema>vsim</dc-schema>
-         <dc-element>bibliography</dc-element>
-         <repeatable>false</repeatable>
-         <label>Bibliography</label>
-         <input-type>textarea</input-type>
-         <hint>Please use this field to list relevant publications about the item (not necessary for non-VSim files).</hint>
-         <required></required>
-       </field>
-       
        <field>
          <dc-schema>vsim</dc-schema>
          <dc-element>bibliography</dc-element>
