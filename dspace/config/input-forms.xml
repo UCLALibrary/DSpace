@@ -110,9 +110,9 @@
          <dc-qualifier>created</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Project Dates</label>
-         <input-type>textarea</input-type>
+         <input-type>onebox</input-type>
          <!-- <input-type>date</input-type> -->
-         <hint>Please give the dates this project was initiated and completed (if applicable).</hint>
+         <hint>Please list the dates this project was initiated and completed (if applicable).</hint>
          <!-- dc.date.created -->
          <required></required>
        </field>
