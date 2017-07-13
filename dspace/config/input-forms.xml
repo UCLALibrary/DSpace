@@ -606,10 +606,6 @@ it, please enter the types and the actual numbers or codes.</hint>
    <!-- Demonstration of value pairs for temporal extent (historical eras) -->
    <value-pairs value-pairs-name="historical_periods" dc-term="coverage_temporal">
      <pair>
-       <displayed-value>N/A</displayed-value>
-       <stored-value></stored-value>
-     </pair>
-     <pair>
        <displayed-value>ALL</displayed-value>
        <stored-value>ALL</stored-value>
      </pair>
@@ -656,6 +652,49 @@ it, please enter the types and the actual numbers or codes.</hint>
      <pair>
        <displayed-value>N/A</displayed-value>
        <stored-value>N/A</stored-value>
+     </pair>
+   </value-pairs>
+   
+   <value-pairs value-pairs-name="project_subjects" dc-term="subject">
+     <pair>
+       <displayed-value>Architecture</displayed-value>
+       <stored-value>Architecture</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Art</displayed-value>
+       <stored-value>Art</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Cars and Vehicles</displayed-value>
+       <stored-value>Cars and Vehicles</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Cultural Heritage Environments</displayed-value>
+       <stored-value>Cultural Heritage Environments</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Science and Technology</displayed-value>
+       <stored-value>Science and Technology</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Archaeology</displayed-value>
+       <stored-value>Archaeology</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Urban Environments</displayed-value>
+       <stored-value>Urban Environments</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Sculpture</displayed-value>
+       <stored-value>Sculpture</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Artifacts</displayed-value>
+       <stored-value>Artifacts</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Miscellaneous</displayed-value>
+       <stored-value>Miscellaneous</stored-value>
      </pair>
    </value-pairs>
 
