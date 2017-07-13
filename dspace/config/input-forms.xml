@@ -18,7 +18,6 @@
    <name-map collection-handle="20.500.11930/1015" form-name="vsim-project" />
  </form-map>
 
-
  <!-- The form-definitions map lays out the detailed definition of all the -->
  <!-- submission forms. Each separate form set has a unique name as an     -->
  <!-- attribute. This name matches one of the names in the form-map. One   -->
@@ -110,9 +109,10 @@
          <dc-element>date</dc-element>
          <dc-qualifier>created</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Project Start Date</label>
-         <input-type>date</input-type>
-         <hint>Please specify the date this project was initiated. You can leave out the day and/or month if they aren't applicable.</hint>
+         <label>Project Dates</label>
+         <input-type>textarea</input-type>
+         <!-- <input-type>date</input-type> -->
+         <hint>Please give the dates this project was initiated and completed (if applicable).</hint>
          <!-- dc.date.created -->
          <required></required>
        </field>
@@ -163,11 +163,22 @@
          <dc-schema>dc</dc-schema>
          <dc-element>coverage</dc-element>
          <dc-qualifier>temporal</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Temporal Scope</label>
-         <input-type>onebox</input-type>
-         <hint>Please describe the project's primary time period.</hint>
+         <input-type value-pairs-name="historical_periods">qualdrop_value</input-type>
+         <hint>Please describe the project's primary time period(s).</hint>
          <!-- dc.coverage.temporal -->
+         <required></required>
+       </field>
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Subject</label>
+         <input-type value-pairs-name="project_subjects">qualdrop_value</input-type>
+         <hint>Please select the project's main subject area discipline(s).</hint>
+         <!-- dc.subject -->
          <required></required>
        </field>
        <field>
@@ -185,7 +196,7 @@
          <dc-element>contributor</dc-element>
          <dc-qualifier>author</dc-qualifier>
          <repeatable>true</repeatable>
-         <label>Author(s)</label>
+         <label>Author(s)/PI(s)</label>
          <input-type>name</input-type>
          <hint>Please list the names of the principal author(s) of this project.</hint>
          <!-- dc.contributor.author -->
@@ -229,7 +240,7 @@
          <dc-element>description</dc-element>
          <dc-qualifier>uri</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Description URI</label>
+         <label>Project Website</label>
          <input-type>onebox</input-type>
          <hint>Please provide the URI/URL of an external site associated with this project, if available.</hint>
          <!-- dc.description.uri -->
@@ -245,6 +256,7 @@
          <!-- vsim.news -->
          <required></required>
        </field>
+       <!-- dc.date.available
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>date</dc-element>
@@ -253,10 +265,9 @@
          <label>Date of Availability</label>
          <input-type>date</input-type>
          <hint>Please give the date this project was made available for use (not the date of previous publication or public distribution). You can leave out the day and/or month if they aren't applicable.</hint>
-         <!-- dc.date.available -->
-         <!-- XXX To be used for embargoing availability of the project up to a certain date? -->
          <required></required>
        </field>
+       -->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -294,7 +305,7 @@
          <dc-element>date</dc-element>
          <dc-qualifier>issued</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>*Date of Issue</label>
+         <label>*Date of Publication</label>
          <input-type>date</input-type>
          <hint>Required. Please give the date of previous publication or public distribution of the project. You can leave out the day and/or month if they aren't applicable.</hint>
          <!-- dc.date.issued -->
@@ -359,7 +370,7 @@
          <dc-element>date</dc-element>
          <dc-qualifier>issued</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>*Date of Issue</label>
+         <label>*Date of Publication</label>
          <input-type>date</input-type>
          <hint>Required. Please give the date of previous publication or public distribution of the item. Feel free to estimate. You can leave out the day and/or month if they aren't applicable.</hint>
          <required>You must enter at least the year.</required>
@@ -493,7 +504,7 @@ it, please enter the types and the actual numbers or codes.</hint>
        </field>
        -->
 
-        <field>
+       <field>
          <dc-schema>vsim</dc-schema>
          <dc-element>bibliography</dc-element>
          <repeatable>false</repeatable>
@@ -591,6 +602,63 @@ it, please enter the types and the actual numbers or codes.</hint>
  <!-- stores the associated stored-values in the database.                  -->
 
  <form-value-pairs>
+
+   <!-- Demonstration of value pairs for temporal extent (historical eras) -->
+   <value-pairs value-pairs-name="historical_periods" dc-term="coverage_temporal">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>ALL</displayed-value>
+       <stored-value>ALL</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>8000-2000 BCE</displayed-value>
+       <stored-value>8000-2000 BCE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>2000-1000 BCE</displayed-value>
+       <stored-value>2000-1000 BCE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1000 BCE - 1 CE</displayed-value>
+       <stored-value>1000 BCE - 1 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1-500 CE</displayed-value>
+       <stored-value>1-500 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>500-1000 CE</displayed-value>
+       <stored-value>500-1000 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1000-1400 CE</displayed-value>
+       <stored-value>1000-1400 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1400-1600 CE</displayed-value>
+       <stored-value>1400-1600 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1600-1800 CE</displayed-value>
+       <stored-value>1600-1800 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1800-1900 CE</displayed-value>
+       <stored-value>1800-1900 CE</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>1900 CE-PRESENT</displayed-value>
+       <stored-value>1900 CE-PRESENT</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value>N/A</stored-value>
+     </pair>
+   </value-pairs>
+
    <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
      <pair>
        <displayed-value>ISSN</displayed-value>
