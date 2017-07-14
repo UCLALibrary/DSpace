@@ -112,7 +112,7 @@
          <label>Project Dates</label>
          <input-type>onebox</input-type>
          <!-- <input-type>date</input-type> -->
-         <hint>Please list the dates this project was initiated and completed (if applicable).</hint>
+         <hint>Please specify dates for the project. Include a start date and end date, and list relevant project phases (e.g., "Research Start Date 2011; Model built in 2012; Completed project website in 2014").</hint>
          <!-- dc.date.created -->
          <required></required>
        </field>
@@ -198,7 +198,7 @@
          <repeatable>true</repeatable>
          <label>Author(s)/PI(s)</label>
          <input-type>name</input-type>
-         <hint>Please list the names of the principal author(s) of this project.</hint>
+         <hint>Please list the names of the principal author(s) and/or PI(s) of this project.</hint>
          <!-- dc.contributor.author -->
          <required></required>
        </field>
@@ -290,14 +290,14 @@
          <!-- dc.date.copyright -->
          <required></required>
        </field>
-      <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>rights</dc-element>
+       <field>
+         <dc-schema>vsim</dc-schema>
+         <dc-element>reuse</dc-element>
          <repeatable>false</repeatable>
          <label>Permissions and Reuse</label>
          <input-type>textarea</input-type>
-         <hint>Please list any specific restrictions or requirments pertaining to the use of content related to the project in publications.</hint>
-         <!-- dc.rights -->
+         <hint>Please list any specific restrictions or requirements pertaining to the use of content related to the project in publications.</hint>
+         <!-- formerly dc.rights; DSpace uses dc.rights to hold the CC license -->
          <required></required>
        </field>
        <field>
@@ -307,7 +307,7 @@
          <repeatable>false</repeatable>
          <label>*Date of Publication</label>
          <input-type>date</input-type>
-         <hint>Required. Please give the date of previous publication or public distribution of the project. You can leave out the day and/or month if they aren't applicable.</hint>
+         <hint>Required. Please list the date of previous publication or public distribution of the project. If the project has not been previously published or publically distributed, please use today’s date. You can leave out the day and/or month if they aren't applicable.</hint>
          <!-- dc.date.issued -->
          <required>You must at least specify the year.</required>
        </field>
@@ -557,17 +557,17 @@ it, please enter the types and the actual numbers or codes.</hint>
          <hint>Please give the copyright date for this item. You can leave out the day and/or month if they aren't applicable.</hint>
          <required></required>
        </field>
-
+       <!-- formerly dc.rights; DSpace uses dc.rights to hold the CC license
        <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>rights</dc-element>
+         <dc-schema>vsim</dc-schema>
+         <dc-element>reuse</dc-element>
          <repeatable>false</repeatable>
          <label>Permissions and Reuse</label>
          <input-type>textarea</input-type>
-         <hint>Please list any specific restrictions or requirments pertaining to the use of this item in publications.</hint>
+         <hint>Please list any specific restrictions or requirements pertaining to the use of this item in publications.</hint>
          <required></required>
        </field>
-
+       -->
      </page>
    </form>
 
