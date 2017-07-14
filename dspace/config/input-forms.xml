@@ -61,6 +61,7 @@
          <hint>Please provide the name of the institution responsible for the creation of this project.</hint>
          <!-- dc.publisher -->
          <required></required>
+
        </field>
        <field>
          <dc-schema>dc</dc-schema>
@@ -69,6 +70,7 @@
          <repeatable>false</repeatable>
          <label>Project Abstract</label>
          <input-type>textarea</input-type>
+
          <hint>Please provide a short abstract describing the project.</hint>
          <!-- dc.description.abstract -->
          <required></required>
@@ -322,9 +324,18 @@
          <required></required>
          <visibility>workflow</visibility>
        </field>
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <repeatable>false</repeatable>
+         <label>Language</label>
+         <input-type>onebox</input-type>
+         <hint>dc.language: This field defaults to "English" and is provided only for compatibility with metadata harvesters. It should not be visible to users.</hint>
+         <required></required>
+         <visibility>workflow</visibility>
+       </field>
      </page>
    </form>
-
 
    <!-- The fields defined for this submission form are used when adding an item to a collection -->
    <form name="traditional">
