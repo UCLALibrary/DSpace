@@ -22,7 +22,12 @@ public class TGNAuthority extends GettyAuthority {
 	
 	@Override
 	public Choices getMatches(String field, String text, Collection collection, int start, int limit, String locale) {
-		String sparQL = String.format(query, text);
+
+		/* PMB: Insert "AND" between terms so that queries like "Los Angeles" work better */
+
+		String searchText = text.replace(" ", " AND "); 
+
+		String sparQL = String.format(query, searchText);
 		Choices results = query(sparQL);
 		return results;
 	}
