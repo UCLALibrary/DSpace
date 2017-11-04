@@ -168,7 +168,7 @@
          <repeatable>false</repeatable>
          <label>Acknowledgements</label>
          <input-type>textarea</input-type>
-         <hint>List any special thanks or acknowledgments.</hint>
+         <hint>List any special thanks or acknowledgements.</hint>
          <!-- vsim.acknowledgements -->
          <required></required>
        </field>
@@ -190,6 +190,16 @@
          <label>Spatial Scope</label>
          <input-type>onebox</input-type>
          <hint>Describe the primary spatial/geographic scope of the project. The autocomplete values are drawn from the Getty Thesaurus of Geographic Names (TGN).</hint>
+         <!-- dc.coverage.spatial -->
+         <required></required>
+       </field>
+       <field>
+         <dc-schema>vsim</dc-schema>
+         <dc-element>continent</dc-element>
+         <repeatable>false</repeatable>
+         <label>Continent</label>
+         <input-type value-pairs-name="continents">dropdown</input-type>
+         <hint>Select the continent(s) most relevant to the project. Hold down the Ctrl key to select more than one continent.</hint>
          <!-- dc.coverage.spatial -->
          <required></required>
        </field>
@@ -626,6 +636,37 @@ it, please enter the types and the actual numbers or codes.</hint>
  <!-- stores the associated stored-values in the database.                  -->
 
  <form-value-pairs>
+
+   <value-pairs value-pairs-name="continents" dc-term="vsim_continent">
+     <pair>
+       <displayed-value>Africa</displayed-value>
+       <stored-value>Africa</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Asia</displayed-value>
+       <stored-value>Asia</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Europe</displayed-value>
+       <stored-value>Europe</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>North America</displayed-value>
+       <stored-value>North America</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>South America</displayed-value>
+       <stored-value>South America</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Antarctica</displayed-value>
+       <stored-value>Antarctica</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Australia/Oceania</displayed-value>
+       <stored-value>Australia/Oceania</stored-value>
+     </pair>
+   </value-pairs>
 
    <!-- Demonstration of value pairs for temporal extent (historical eras) -->
    <value-pairs value-pairs-name="historical_periods" dc-term="coverage_temporal">
