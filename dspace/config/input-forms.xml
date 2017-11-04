@@ -168,7 +168,7 @@
          <repeatable>false</repeatable>
          <label>Acknowledgements</label>
          <input-type>textarea</input-type>
-         <hint>List any special thanks or acknowledgments.</hint>
+         <hint>List any special thanks or acknowledgements.</hint>
          <!-- vsim.acknowledgements -->
          <required></required>
        </field>
