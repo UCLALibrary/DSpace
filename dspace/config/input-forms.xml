@@ -196,7 +196,7 @@
        <field>
          <dc-schema>vsim</dc-schema>
          <dc-element>continent</dc-element>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Continent</label>
          <input-type value-pairs-name="continents">dropdown</input-type>
          <hint>Select the continent(s) most relevant to the project. Hold down the Ctrl key to select more than one continent.</hint>
