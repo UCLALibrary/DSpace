@@ -119,15 +119,15 @@
                                             <h1 class="text-center">Let VSim facilitate real-time<br/>exploration in your classroom</h1>
                                             <div class="container vsim-featured-project-container">
                                                 <div class="row-fluid">
-                                                    <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 vsim-featured-project-thumbnail">
-                                                        <img src="/xmlui/themes/Mirage2/images/DigitalKarnakHeroImage_Sept2017.jpg"/>
+                                                    <div class="col-md-5 col-sm-5 col-lg-5 vsim-featured-project-thumbnail">
+                                                        <img class="img-responsive" src="/xmlui/themes/Mirage2/images/DigitalKarnakHeroImage_Sept2017.jpg"/>
                                                         <div class="vsim-featured-project">
                                                             <h3 class="vsim-featured-project-caption">Featured Project</h3>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 vsim-featured-project-text">
+                                                    <div class="col-md-4 col-sm-4 col-lg-4 vsim-featured-project-text">
                                                             <h3>Digital Karnak</h3>
-                                                            <p>The <a href="/xmlui/handle/20.500.11930/1018">Digital Karnak Project</a> aims to make the site of Karnak
+                                                            <p>The <a href="/xmlui/handle/20.500.11991/1012">Digital Karnak Project</a> aims to make the site of Karnak
                                                                 more accessible to students and instructors in the English-speaking world. As part of this goal, a 3-D Virtual
                                                                 Reality model of the temple was constructed, offering students a completely new way to view the temple:
                                                                 reign-by-reign, following the complex patterns of royal construction, modification and destruction that are
@@ -144,7 +144,7 @@
                                         <!-- if this is the submission page, show the link to the project masters submission page -->
                                         <xsl:when test="normalize-space($request-uri)='pages/add'">
                                             <p class="text-center">
-                                                <a href="/xmlui/handle/{$vsim-project-masters-handle}/submit" class="btn btn-large"><img src="/xmlui/themes/Mirage2/images/SubmitLink.png" alt=" Submit a Project "/></a>
+                                                <a href="/xmlui/handle/{$vsim-project-masters-handle}/submit" class="btn btn-large btn-vsim-project-submit"><img src="/xmlui/themes/Mirage2/images/SubmitLink.png" alt=" Submit a Project "/></a>
                                             </p>
                                         </xsl:when>
                                         <!-- if this is the tour page, show the tour carousel -->
@@ -200,7 +200,7 @@
                                             <xsl:apply-templates select="*[not(self::dri:options)]"/>
 
 
-                                              <div class="hidden-lg">
+                                              <div class="hidden-lg hidden-med hidden-sm">
                                                 <xsl:call-template name="buildFooter"/>
                                             </div>
                                         </div>
@@ -493,7 +493,7 @@
                             <img src="{$theme-path}images/vsim.png" />
                         </a>
 
-                        <div class="navbar-header pull-right hidden-lg hidden-md hidden-sm">
+                        <div class="navbar-header pull-right hidden-lg hidden-md">
                         <ul class="nav nav-pills pull-left ">
 
                             <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">
@@ -566,13 +566,12 @@
                             <!-- small navigation buttons for sm and xs screens, keep scrolling down for the full-sized buttons -->
                             <li><a class="btn" role="button" href="{$app_path}/projects">browse</a></li>
                             <li><a class="btn" role="button" href="{$app_path}/pages/add">submit project</a></li>
-                            <li><a class="btn" role="button" href="{$app_path}/pages/download">download</a></li>
 
                         </ul>
                               </div>
                     </div>
 
-                    <div class="navbar-header pull-right hidden-xs">
+                    <div class="navbar-header pull-right hidden-xs hidden-sm">
                         <ul class="nav navbar-nav pull-left">
                               <xsl:call-template name="languageSelection"/>
                           </ul>
@@ -857,22 +856,21 @@
 
     <!-- Like the header, the footer contains various miscellaneous text, links, and image placeholders -->
     <xsl:template name="buildFooter">
-        <footer class="vsim-footer">
-                <div>
-                    <div class="col-xs-7 col-sm-8">
-                        <div class="pull-left">
-                            <a href="https://www.library.ucla.edu/">
-                                <img src="{$theme-path}images/UCLALibrary.png" />
+        <footer class="vsim-footer container">
+                    <div class="col-md-10 col-lg-10 col-xs-7 col-sm-8 pull-left">
+                        <div class="btn-group" role="group" aria-label="footer-branding">
+                           <a class="btn" role="button" href="https://www.library.ucla.edu/">
+                                <img class="img-responsive img-vsim-footer" src="{$theme-path}images/UCLALibrary.png" />
                             </a>
-                            <a href="https://idre.ucla.edu/">
-                                <img src="{$theme-path}images/IDRE.png" />
+                            <a class="btn" role="button" href="https://idre.ucla.edu/">
+                                <img class="img-responsive img-vsim-footer" src="{$theme-path}images/IDRE.png" />
                             </a>
-                            <a href="https://www.neh.gov/">
-                                <img src="{$theme-path}images/Humanities.png" />
+                            <a class="btn" role="button" href="https://www.neh.gov/">
+                                <img class="img-responsive img-vsim-footer" src="{$theme-path}images/Humanities.png" />
                             </a>
                         </div>
                     </div>
-                    <div class="col-xs-5 col-sm-4 hidden-print">
+                    <div class="col-md-2 col-lg-2 col-xs-5 col-sm-4 hidden-print">
                         <div class="pull-right">
                             <a>
                                 <xsl:attribute name="href">
@@ -908,7 +906,6 @@
                             </a>
                         </div>
 
-                    </div>
                 </div>
                 <!--Invisible link to HTML sitemap (for search engines) -->
                 <a class="hidden">

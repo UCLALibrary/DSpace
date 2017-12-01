@@ -45,8 +45,13 @@
     margin-top: 13px;
 }
 
-.vsim-featured-project-thumbnail {
-    height: 273px;
+.img-vsim-footer {
+    height: auto;
+}
+
+.btn-vsim-project-submit {
+    margin-top: 100px;
+    border-color: #000;
 }
 
 .vsim-featured-project-thumbnail img{
@@ -221,7 +226,7 @@ a.list-group-item {
   margin-left: 15px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .vsim-footer {
     text-align: left;
   }
