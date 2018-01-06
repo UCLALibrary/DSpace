@@ -21,6 +21,7 @@ import org.dspace.app.xmlui.wing.element.PageMeta;
 import org.dspace.content.*;
 import org.dspace.content.factory.ContentServiceFactory;
 import org.dspace.content.service.CommunityService;
+import org.dspace.content.service.CollectionService;
 import org.dspace.core.Constants;
 import org.dspace.core.Context;
 import org.dspace.handle.factory.HandleServiceFactory;
@@ -28,7 +29,7 @@ import org.dspace.handle.service.HandleService;
 
 /**
  * Simple utility class for extracting handles.
- * 
+ *
  * @author Scott Phillips
  */
 
@@ -41,12 +42,13 @@ public class HandleUtil
     protected static final String DSPACE_OBJECT = "dspace.object";
 
     protected static final CommunityService communityService = ContentServiceFactory.getInstance().getCommunityService();
+    protected static final CollectionService collectionService = ContentServiceFactory.getInstance().getCollectionService();
     protected static final HandleService handleService = HandleServiceFactory.getInstance().getHandleService();
 
 
     /**
      * Obtain the current DSpace handle for the specified request.
-     * 
+     *
      * @param objectModel
      *            The cocoon model.
      * @return A DSpace handle, or null if none found.
@@ -99,7 +101,7 @@ public class HandleUtil
 
     /**
      * Determine if the given DSO is an ancestor of the the parent handle.
-     * 
+     *
      * @param dso
      *            The child DSO object.
      * @param parent
@@ -220,9 +222,28 @@ public class HandleUtil
         {
             Collection collection = (Collection) aDso;
             stack.push(collection);
-            List<Community> communities = collection.getCommunities();
 
-            aDso = communities.get(0);
+            // VSIM-84: if this collection is a Project Collection, we need to link to the project master item and not the owning community
+            // (communities are never used or linked to for all VSim except in special cases).
+            // Look at the collection metadata and see if there is a link to a project master item (vsim.relation.projectMaster).
+            // IF there *is* a link to a project master item, let's grab the DSO for that item and push *it* into the stack,
+            // OTHERWISE, proceed as if this is a regular collection and link to the community.
+
+            // TODO: add imports for MetaDataValue, collectionService
+
+            if ( null != collectionService.getMetadata(collection, "vsim", "relation", "projectMaster", Item.ANY))
+            {
+              List<MetadataValue> mvProjectMaster = collectionService.getMetadata(collection, "vsim", "relation", "projectMaster", Item.ANY);
+              String projectMasterHandle = mvProjectMaster.get(0).getValue();
+              // grab the DSO for the projectMaster item, and pop it into the stack
+              aDso = handleService.resolveToObject(context, projectMasterHandle);
+            }
+            else // If mvProjectMaster is null, we didn't find this metadata, proceed as normal
+            {
+              List<Community> communities = collection.getCommunities();
+              aDso = communities.get(0);
+            }
+
         }
 
         if (aDso instanceof Community)
@@ -267,6 +288,18 @@ public class HandleUtil
                     pageMeta.addTrailLink(target, new Message("default", "xmlui.general.untitled"));
                 }
             	else
+                {
+                    pageMeta.addTrailLink(target, name);
+                }
+            }
+            else if (pop instanceof Item) {
+              Item item = (Item) pop;
+              String name = item.getName();
+              if (name == null || name.length() == 0)
+                {
+                    pageMeta.addTrailLink(target, new Message("default", "xmlui.general.untitled"));
+                }
+              else
                 {
                     pageMeta.addTrailLink(target, name);
                 }
