@@ -229,8 +229,6 @@ public class HandleUtil
             // IF there *is* a link to a project master item, let's grab the DSO for that item and push *it* into the stack,
             // OTHERWISE, proceed as if this is a regular collection and link to the community.
 
-            // TODO: add imports for MetaDataValue, collectionService
-
             if ( null != collectionService.getMetadata(collection, "vsim", "relation", "projectMaster", Item.ANY))
             {
               List<MetadataValue> mvProjectMaster = collectionService.getMetadata(collection, "vsim", "relation", "projectMaster", Item.ANY);
