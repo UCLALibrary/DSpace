@@ -98,12 +98,12 @@
        </field>
        <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>relation</dc-element>
+         <dc-element>publisher</dc-element>
          <repeatable>true</repeatable>
          <label>Institutional Affiliation</label>
          <input-type>onebox</input-type>
          <hint>List the institution(s) associated with the project.</hint>
-         <!-- dc.relation -->
+         <!-- dc.publisher -->
          <required></required>
        </field>
        <field>
