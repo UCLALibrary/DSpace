@@ -1,7 +1,7 @@
 
 # UCLA Library's fork of DSpace
 
-[![Build Status](https://travis-ci.org/UCLALibrary/DSpace.png?branch=ucla-vsim-6_x)](https://travis-ci.org/UCLALibrary/DSpace)
+[![Build Status](https://travis-ci.com/UCLALibrary/DSpace.png?branch=ucla-vsim-6_x)](https://travis-ci.com/UCLALibrary/DSpace)
 VSim Codacy Grade: [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5cb37fb05de34610bea7efd16f86afb9)](https://www.codacy.com/app/hardy/UCLA_DSpace?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UCLALibrary/DSpace&amp;utm_campaign=Badge_Grade)
 
 [DSpace Documentation](https://wiki.duraspace.org/display/DSDOC/) | 
